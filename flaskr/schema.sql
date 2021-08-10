@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS animal;
+
+CREATE TABLE user (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE NOT NULL
+);
+
+CREATE TABLE animal (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  type TEXT NOT NULL,
+  name TEXT,
+  photo_url_local TEXT ,
+  photo_url_api TEXT,
+  owner_id INTEGER NOT NULL,
+  FOREIGN KEY (owner_id) REFERENCES user (id)
+);

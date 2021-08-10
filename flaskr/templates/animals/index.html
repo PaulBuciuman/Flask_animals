@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Animals{% endblock %}</h1>
+{% endblock %}
+
+
+{% block content %}
+Hi Dude!
+  <form method="post">
+    <label for="title">Username:</label>
+    <input name="username" id="username" value="{{ request.form['username'] }}" required>
+    <label for="animal_type">Choose your favorite animal:</label>
+    <select name="animal_type" id="animal_type" value="{{ request.form['animal_type'] }}" >
+      <option>Bear</option>
+      <option>Cat</option>
+      <option>Dog</option>
+      <option>Fox</option> 
+    </select>
+    <br/>
+    <input type="submit" value="Save" name = "action">
+    <input type="submit" value = "Fetch" name="action"> 
+    
+  </form>
+ 
+  <hr>
+{% endblock %} 
